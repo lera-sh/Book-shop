@@ -1,0 +1,207 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url(assets/fonts/Montserrat-Regular.ttf);
+}
+
+body{
+  background-color: #e3d3ba;
+
+}
+
+.input-name {
+  display: flex;
+   margin-left: 53px;
+}
+
+.input-surname {
+  display: flex;
+  margin-left: 35px;
+}
+
+.input-date {
+  display: flex;
+  margin-left: 7px;
+}
+
+.input-street {
+  display: flex;
+  margin-left: 4px;
+}
+
+.input-house {
+  display: flex;
+  margin-left: 0;
+}
+
+.input-flat {
+  display: flex;
+  margin-left: 16px;
+}
+
+.order-content {
+  width: 500px;
+  height: 500px;
+  border-radius: 5px;
+}
+
+h1 {
+  color: #494139;
+  font-family: 'Times New Roman', 'Times' sans-serif;
+  font-size: 60px;
+  font-weight: 100;
+  margin-left: 140px;
+}
+
+label {
+  color: #494139;
+  font-family: 'Montserrat', 'Helvetica', sans-serif;
+  font-size: 17px;
+}
+
+div {
+  color: #494139;
+  font-family: 'Montserrat', 'Helvetica', sans-serif;
+  font-size: 17px;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+
+input {
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+
+.pop-up {
+  display: none;
+  position: fixed;
+  width: 700px;
+  height: 550px;
+  background-color:#b9b29a;
+  top:10%;
+  left: 30%;
+  align-content: center;
+  text-align: center;
+}
+
+#address-summary {
+  font-size: 22px;
+}
+
+#customer-summary {
+  font-size: 22px;
+}
+
+#close-btn {
+  background-color: #faf7f3;
+  border: 2px solid #e1c7a2;
+  border-radius: 20px;
+  color: #494139;
+  cursor: pointer;
+  font-family: 'Montserrat', 'Helvetica', sans-serif;
+  font-size: 13px;
+  margin-bottom: 10px;
+  padding: 7px 10px;
+  transition: background-color .3s;
+  width: 150px;
+  top: 150px;
+  left: 50%;
+}
+
+#close-btn:hover {
+  background-color: #e1c7a2;
+}
+
+.name-container {
+  display: inline-flex;
+  align-items:center;
+  padding:0;
+}
+
+.warn-pop {
+visibility:hidden;
+ background-color: ghostwhite;
+ color:red;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.invalid {
+  outline: none;
+  border:  2px solid red;
+}
+
+
+.valid {
+  outline: none;
+  border: 2px solid black;
+}
+
+
+.warn-pop-date {
+    left: 14%;
+    top: 21px;
+    background-color: ghostwhite;
+    color:red;
+}
+
+.input-div-cont {
+    display: flex;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.name-container {
+  display: inline-flex;
+  align-items:baseline;
+}
+
+p {
+  margin: 0  0 0 15px;
+}
+
+.special-border {
+  border: solid 3px #e8dcb8;
+  display: flex;
+}
+
+.submit-btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+.submit-btn {
+  background-color: #faf7f3;
+  border: 2px solid #e1c7a2;
+  border-radius: 30px;
+  color: #494139;
+  cursor: pointer;
+  font-family: 'Montserrat', 'Helvetica', sans-serif;
+  font-size: 18px;
+  margin-bottom: 10px;
+  padding: 9px 17px;
+  transition: background-color .3s;
+  width: 150px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: #e1c7a2;
+}
+
+
+.submit-btn:disabled {
+  cursor: not-allowed !important;
+}
