@@ -75,7 +75,6 @@ input {
   margin-bottom: 5px;
 }
 
-
 .pop-up {
   display: none;
   position: fixed;
@@ -204,4 +203,82 @@ p {
 
 .submit-btn:disabled {
   cursor: not-allowed !important;
+}
+
+@media (max-width: 1440px) {
+  .pop-up {
+    width: 700px;
+    height: 550px;
+    top: 10%;
+    left: 30%;
+  }
+}
+
+@media (max-width: 1280px) {
+  .pop-up {
+    top: 20%;
+    left: 20%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .pop-up {
+    width: 500px;
+    height: 500px;
+    top: 20%;
+    left: 25%;
+  }
+}
+
+@media (max-width: 992px) {
+  .pop-up {
+    top: 20%;
+    left: 20%;
+  }
+}
+
+@media (max-width: 768px) {
+  .pop-up {
+    top: 20%;
+    left: 15%;
+  }
+}
+
+@media (max-width: 640px) {
+  h1 {
+    font-size: 50px;
+    margin-left: 0;
+    text-align: center;
+  }
+  .pop-up {
+    top: 15%;
+    left: 5%;
+  }
+}
+
+@media (max-width: 540px) {
+  .pop-up {
+    width: 400px;
+    height: 400px;
+    top: 10%;
+    left: 10%;
+  }
+}
+
+@media (max-width: 480px) {
+  .pop-up {
+    width: 350px;
+    height: 350px;
+    top: 10%;
+    left: 10%;
+  }
+}
+
+@media (max-width: 420px) {
+  .pop-up {
+    width: 300px;
+    height: 300px;
+    top: 10%;
+    left: 10%;
+  }
 }
