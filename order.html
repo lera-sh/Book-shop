@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./order.css">
+    <link rel="icon" href="assets/icons/favicon.png" type="image/x-icon">
+    <title>Confirm order</title>
+  </head>
+  <body>
+    <header>
+      <h1>Delivery information</h1>
+    </header>
+    <main>
+      <div class="pop-up" id="popM">
+        <h2>The order created!</h2>
+        <p id="address-summary"></p>
+        <p id="customer-summary"></p>
+        <button id="close-btn">Close</button>
+      </div>
+      <form class="myForm" id="myForm" action="#">
+        <div class="name-container">
+          <label for="">Name:</label>
+          <div class="input-name">
+            <input type="text" id="field_name" name="">
+            <p id="warn-pop-up-name" class="warn-pop">Fill this field</p>
+          </div>
+        </div>
+        <div class="name-container">
+          <label for="">Surname:</label>
+          <div class="input-surname">
+            <input type="text" id="field_surname" name="">
+            <p id="warn-pop-up-surname" class="warn-pop">Fill this field</p>
+          </div>
+        </div>
+        <div class="name-container">
+          <label for="">Street number:</label>
+          <div class="input-street">
+            <input type="text" id="field_street" name="">
+            <p id="warn-pop-up-street" class="warn-pop">Fill this field</p>
+          </div>
+        </div>
+        <div class="name-container">
+          <label for="">House number:</label>
+          <div class="input-house">
+            <input type="text" id="field_house" name="">
+            <p id="warn-pop-up-house" class="warn-pop">Fill this field</p>
+          </div>
+        </div>
+        <div class="name-container">
+          <label for="">Flat number:</label>
+          <div class="input-flat">
+            <input type="text" id="field_flat" name="">
+            <p id="warn-pop-up-flat" class="warn-pop">Fill this field</p>
+          </div>
+        </div>
+        <div class="name-container">
+          <label for="">Delivery date:</label>
+          <div class="input-date">
+            <input type="date" id="field_date" name="">
+            <p id="warn-pop-up-date" class="warn-pop">Fill this field</p>
+          </div>
+        </div>
+        <div class="name-container">Payment type:
+          <div id="field_payment" tabindex="0" style=" display: flex; align-items: flex-start; justify-content: flex-start;">
+            <label><input type="radio" name="cash" value="cash" id="cash-radio" style="margin-left: 5px">Cash</label>
+            <label><input style="margin-left: 5px" type="radio" name="card" value="card" id="card-radio">Card</label>
+          </div>
+          <p id="warn-pop-up-payment" class="warn-pop">Fill this field</p>
+        </div>
+        <div class="submit-btn-container">
+          <input type="submit" id="btn-submit" name="complete" value="Complete" class="submit-btn">
+        </div>
+      </form>
+    </main>
+    <script src="order.js"></script>
+  </body>
+</html>
