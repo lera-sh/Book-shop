@@ -1,219 +1,226 @@
-let btnSubmit = document.getElementById("btn-submit");
-let nameField = document.getElementById("field_name");
-let SurNameField = document.getElementById("field_surname");
-let StreetField = document.getElementById("field_street");
-let HouseField = document.getElementById("field_house");
-let FlatField = document.getElementById("field_flat");
-let PaymentField = document.getElementById("field_payment");
-
-let validName = false;
-let validSurName = false;
-let validDate = false;
-let validStreet = false;
-let validHouse = false;
-let validFlate = false;
-let validPayment = false;
+const btnSubmit = document.getElementById("btn-submit")
+const nameField = document.getElementById("field_name")
+let validName = false
 
 window.onload = function () {
   nameField.focus();
-};
-let warnPopName = document.getElementById("warn-pop-up-name");
-nameField.addEventListener("mouseleave", checkBTN);
+}
+
+let warnPopName = document.getElementById("warn-pop-up-name")
+nameField.addEventListener("mouseleave", check)
 nameField.addEventListener("input", function () {
-  let val = document.getElementById("field_name").value;
-  let el = document.getElementById("field_name");
-  if (/^[A-Za-z]{4,}$/.test(val)) {
-    el.className = "valid";
-    warnPopName.style.visibility = "hidden";
-    validName = true;
+  let value = document.getElementById("field_name").value
+  let element = document.getElementById("field_name")
+  if (/^[A-Za-z]{4,}$/.test(value)) {
+    element.className = "valid"
+    warnPopName.style.visibility = "hidden"
+    validName = true
   } else {
-    el.className = "invalid";
-    warnPopName.style.visibility = "visible";
-    validName = false;
+    element.className = "invalid";
+    warnPopName.style.visibility = "visible"
+    validName = false
   }
-});
-nameField.addEventListener("blur", checkBTN);
+})
+
+nameField.addEventListener("blur", check)
 nameField.addEventListener("focusout", function () {
-  let val = document.getElementById("field_name").value;
-  let el = document.getElementById("field_name");
-  if (val.length < 4) {
-    el.className = "invalid";
-    warnPopName.style.visibility = "visible";
-    validName = false;
+  let value = document.getElementById("field_name").value
+  let element = document.getElementById("field_name")
+  if (value.length < 4) {
+    element.className = "invalid"
+    warnPopName.style.visibility = "visible"
+    validName = false
   } else {
-    el.className = "valid";
-    warnPopName.style.visibility = "hidden";
-    validName = true;
+    element.className = "valid"
+    warnPopName.style.visibility = "hidden"
+    validName = true
   }
-});
+})
+
+const SurNameField = document.getElementById("field_surname")
+let validSurName = false
 
 let warnPopSurName = document.getElementById("warn-pop-up-surname");
-SurNameField.addEventListener("input", checkBTN);
+SurNameField.addEventListener("input", check);
 SurNameField.addEventListener("input", function () {
-  let val = document.getElementById("field_surname").value;
-  let el = document.getElementById("field_surname");
-  if (/^[A-Za-z]{5,}$/.test(val)) {
-    el.className = "valid";
+  let value = document.getElementById("field_surname").value;
+  let element = document.getElementById("field_surname");
+  if (/^[A-Za-z]{5,}$/.test(value)) {
+    element.className = "valid";
     warnPopSurName.style.visibility = "hidden";
     validSurName = true;
   } else {
-    el.className = "invalid";
+    element.className = "invalid";
     warnPopSurName.style.visibility = "visible";
     validSurName = false;
   }
 });
-document.addEventListener("mousemove", checkBTN);
-SurNameField.addEventListener("mouseleave", checkBTN);
+
+document.addEventListener("mousemove", check);
+SurNameField.addEventListener("mouseleave", check);
 SurNameField.addEventListener("focusout", function () {
-  let val = document.getElementById("field_surname").value;
-  let el = document.getElementById("field_surname");
-  if (val.length < 5) {
-    el.className = "invalid";
+  let value = document.getElementById("field_surname").value;
+  let element = document.getElementById("field_surname");
+  if (value.length < 5) {
+    element.className = "invalid";
     warnPopSurName.style.visibility = "visible";
     validSurName = false;
   } else {
-    el.className = "valid";
+    element.className = "valid";
     warnPopSurName.style.visibility = "hidden";
     validSurName = true;
   }
 });
 
+const StreetField = document.getElementById("field_street")
+let validStreet = false
+let warnPopStreet = document.getElementById("warn-pop-up-street");
+
+StreetField.addEventListener("mouseleave", check);
+StreetField.addEventListener("input", function () {
+  let value = document.getElementById("field_street").value;
+  let element = document.getElementById("field_street");
+  if (/^[0-9a-zA-Z]{5,}$/.test(value)) {
+    element.className = "valid";
+    warnPopStreet.style.visibility = "hidden";
+    validStreet = true;
+  } else {
+    element.className = "invalid";
+    warnPopStreet.style.visibility = "visible";
+    validStreet = false;
+  }
+});
+StreetField.addEventListener("mouseleave", check);
+StreetField.addEventListener("focusout", function () {
+  let value = document.getElementById("field_street").value;
+  let element = document.getElementById("field_street");
+  if (value.length < 5) {
+    element.className = "invalid";
+    warnPopStreet.style.visibility = "visible";
+    validStreet = false;
+  } else {
+    element.className = "valid";
+    warnPopStreet.style.visibility = "hidden";
+    validStreet = true;
+  }
+});
+
+
+const HouseField = document.getElementById("field_house")
+let validHouse = false
+
+let warnPopHouse = document.getElementById("warn-pop-up-house");
+HouseField.addEventListener("mouseleave", check);
+HouseField.addEventListener("input", function () {
+  let value = document.getElementById("field_house").value;
+  let element = document.getElementById("field_house");
+  if (/^[1-9]+[0-9]*$/.test(value)) {
+    element.className = "valid";
+    warnPopHouse.style.visibility = "hidden";
+    validHouse = true;
+  } else {
+    element.className = "invalid";
+    warnPopHouse.style.visibility = "visible";
+    validHouse = false;
+  }
+});
+HouseField.addEventListener("mouseleave", check);
+HouseField.addEventListener("focusout", function () {
+  let value = document.getElementById("field_house").value;
+  let element = document.getElementById("field_house");
+  if (value.length === 0) {
+    element.className = "invalid";
+    warnPopHouse.style.visibility = "visible";
+    validHouse = false;
+  } else {
+    element.className = "valid";
+    warnPopHouse.style.visibility = "hidden";
+    validHouse = true;
+  }
+});
+
+const FlatField = document.getElementById("field_flat")
+let validFlate = false
+
+let warnPopFlat = document.getElementById("warn-pop-up-flat");
+FlatField.addEventListener("mouseleave", check);
+FlatField.addEventListener("input", function () {
+  let value = document.getElementById("field_flat").value;
+  let element = document.getElementById("field_flat");
+  if (/^[1-9–]+[-0-9–]*$/.test(value)) {
+    element.className = "valid";
+    warnPopFlat.style.visibility = "hidden";
+    validFlate = true;
+  } else {
+    element.className = "invalid";
+    warnPopFlat.style.visibility = "visible";
+    validFlate = false;
+  }
+});
+
+FlatField.addEventListener("mouseleave", check);
+FlatField.addEventListener("focusout", function () {
+  PaymentField.focus();
+  let value = document.getElementById("field_flat").value;
+  let element = document.getElementById("field_flat");
+  if (value.length === 0) {
+    element.className = "invalid";
+    warnPopFlat.style.visibility = "visible";
+    validFlate = false;
+  } else {
+    element.className = "valid";
+    warnPopFlat.style.visibility = "hidden";
+    validFlate = true;
+  }
+});
+
+let validDate = false
 let dateField = document.getElementById("field_date");
 let warnPopDate = document.getElementById("warn-pop-up-date");
 
-dateField.addEventListener("input", checkBTN);
+dateField.addEventListener("input", check);
 dateField.addEventListener("mouseleave", function () {
-  let el = document.getElementById("field_date");
+  let element = document.getElementById("field_date");
   let today = new Date();
   let datePicked = document.getElementById("field_date").value;
   let userDate = new Date(datePicked);
   if (userDate <= today) {
-    el.className = "invalid";
+    element.className = "invalid";
     warnPopDate.style.visibility = "visible";
     validDate = false;
   } else {
-    el.className = "valid";
+    element.className = "valid";
     warnPopDate.style.visibility = "hidden";
     validDate = true;
   }
 });
-dateField.addEventListener("mouseleave", checkBTN);
+
+dateField.addEventListener("mouseleave", check);
 dateField.addEventListener("focusout", function () {
-  let el = document.getElementById("field_date");
+  let element = document.getElementById("field_date");
   let today = new Date();
   let datePicked = document.getElementById("field_date").value;
   let userDate = new Date(datePicked);
   if (datePicked  && userDate > today) {
-    el.className = "valid";
+    element.className = "valid";
     warnPopDate.style.visibility = "hidden";
     validDate = true;
   } else {
-    el.className = "invalid";
+    element.className = "invalid";
     warnPopDate.style.visibility = "visible";
     validDate = false;
   }
 });
 
-let warnPopStreet = document.getElementById("warn-pop-up-street");
-
-StreetField.addEventListener("mouseleave", checkBTN);
-StreetField.addEventListener("input", function () {
-  let val = document.getElementById("field_street").value;
-  let el = document.getElementById("field_street");
-  if (/^[0-9a-zA-Z]{5,}$/.test(val)) {
-    el.className = "valid";
-    warnPopStreet.style.visibility = "hidden";
-    validStreet = true;
-  } else {
-    el.className = "invalid";
-    warnPopStreet.style.visibility = "visible";
-    validStreet = false;
-  }
-});
-StreetField.addEventListener("mouseleave", checkBTN);
-StreetField.addEventListener("focusout", function () {
-  let val = document.getElementById("field_street").value;
-  let el = document.getElementById("field_street");
-  if (val.length < 5) {
-    el.className = "invalid";
-    warnPopStreet.style.visibility = "visible";
-    validStreet = false;
-  } else {
-    el.className = "valid";
-    warnPopStreet.style.visibility = "hidden";
-    validStreet = true;
-  }
-});
-
-let warnPopHouse = document.getElementById("warn-pop-up-house");
-HouseField.addEventListener("mouseleave", checkBTN);
-HouseField.addEventListener("input", function () {
-  let val = document.getElementById("field_house").value;
-  let el = document.getElementById("field_house");
-  if (/^[1-9]+[0-9]*$/.test(val)) {
-    el.className = "valid";
-    warnPopHouse.style.visibility = "hidden";
-    validHouse = true;
-  } else {
-    el.className = "invalid";
-    warnPopHouse.style.visibility = "visible";
-    validHouse = false;
-  }
-});
-HouseField.addEventListener("mouseleave", checkBTN);
-HouseField.addEventListener("focusout", function () {
-  let val = document.getElementById("field_house").value;
-  let el = document.getElementById("field_house");
-  if (val.length === 0) {
-    el.className = "invalid";
-    warnPopHouse.style.visibility = "visible";
-    validHouse = false;
-  } else {
-    el.className = "valid";
-    warnPopHouse.style.visibility = "hidden";
-    validHouse = true;
-  }
-});
-
-let warnPopFlat = document.getElementById("warn-pop-up-flat");
-FlatField.addEventListener("mouseleave", checkBTN);
-FlatField.addEventListener("input", function () {
-  let val = document.getElementById("field_flat").value;
-  let el = document.getElementById("field_flat");
-  if (/^[1-9–]+[-0-9–]*$/.test(val)) {
-    el.className = "valid";
-    warnPopFlat.style.visibility = "hidden";
-    validFlate = true;
-  } else {
-    el.className = "invalid";
-    warnPopFlat.style.visibility = "visible";
-    validFlate = false;
-  }
-});
-
-FlatField.addEventListener("mouseleave", checkBTN);
-FlatField.addEventListener("focusout", function () {
-  PaymentField.focus();
-  let val = document.getElementById("field_flat").value;
-  let el = document.getElementById("field_flat");
-  if (val.length === 0) {
-    el.className = "invalid";
-    warnPopFlat.style.visibility = "visible";
-    validFlate = false;
-  } else {
-    el.className = "valid";
-    warnPopFlat.style.visibility = "hidden";
-    validFlate = true;
-  }
-});
-
+const PaymentField = document.getElementById("field_payment")
+let validPayment = false
 let cashSelected = false;
 let cardSelected = false;
 let cashField = document.getElementById("cash-radio");
 let cardField = document.getElementById("card-radio");
 let warnPopPayment = document.getElementById("warn-pop-up-payment");
 
-cashField.addEventListener("mouseleave", checkBTN);
+cashField.addEventListener("mouseleave", check);
 cashField.addEventListener("change", function () {
   if (cashField.checked) {
     cashSelected = true;
@@ -223,7 +230,7 @@ cashField.addEventListener("change", function () {
   }
 });
 
-cardField.addEventListener("mouseleave", checkBTN);
+cardField.addEventListener("mouseleave", check);
 cardField.addEventListener("change", function () {
   if (cardField.checked) {
     cardSelected = true;
@@ -233,8 +240,8 @@ cardField.addEventListener("change", function () {
   }
 });
 
-PaymentField.addEventListener("mouseleave", checkBTN);
-PaymentField.addEventListener("focusout", checkBTN);
+PaymentField.addEventListener("mouseleave", check);
+PaymentField.addEventListener("focusout", check);
 
 PaymentField.addEventListener("focusout", function () {
   if (cashField.checked === false && cardField.checked === false) {
@@ -263,7 +270,7 @@ let fieldArr = [
   cashField.value,
 ];
 
-function checkBTN() {
+function check() {
   console.log(validName);
   console.log(validSurName);
   console.log(validDate);
@@ -288,10 +295,10 @@ function checkBTN() {
   }
 }
 
-let closePopUpBtn = document.getElementById("close-btn");
-let addressInfo = document.getElementById("address-summary");
-let customerInfo = document.getElementById("customer-summary");
-let PopUp = document.getElementById("popM");
+const closePopUpBtn = document.getElementById("close-btn");
+const addressInfo = document.getElementById("address-summary");
+const customerInfo = document.getElementById("customer-summary");
+const PopUp = document.getElementById("popM");
 
 btnSubmit.addEventListener("click", (ev) => {
   addressInfo.innerText = `The delivery address is: ${StreetField.value} ${HouseField.value} ${FlatField.value}.`;
