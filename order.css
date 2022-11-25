@@ -5,7 +5,6 @@
 
 body{
   background-color: #e3d3ba;
-
 }
 
 .input-name {
@@ -49,7 +48,14 @@ h1 {
   font-family: 'Times New Roman', 'Times' sans-serif;
   font-size: 60px;
   font-weight: 100;
-  margin-left: 140px;
+  text-align: center;
+}
+
+.myForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 50px;
 }
 
 label {
@@ -62,13 +68,13 @@ div {
   color: #494139;
   font-family: 'Montserrat', 'Helvetica', sans-serif;
   font-size: 17px;
+  margin-bottom: 10px;
 }
 
 main {
   display: flex;
   justify-content: center;
 }
-
 
 input {
   border-radius: 5px;
@@ -80,7 +86,7 @@ input {
   position: fixed;
   width: 700px;
   height: 550px;
-  background-color:#b9b29a;
+  background-color: #f2ebe3;
   top:10%;
   left: 30%;
   align-content: center;
@@ -89,10 +95,12 @@ input {
 
 #address-summary {
   font-size: 22px;
+  font-style: italic;
 }
 
 #customer-summary {
   font-size: 22px;
+  font-style: italic;
 }
 
 #close-btn {
@@ -103,7 +111,7 @@ input {
   cursor: pointer;
   font-family: 'Montserrat', 'Helvetica', sans-serif;
   font-size: 13px;
-  margin-bottom: 10px;
+  margin-top: 10px;
   padding: 7px 10px;
   transition: background-color .3s;
   width: 150px;
@@ -116,15 +124,16 @@ input {
 }
 
 .name-container {
-  display: inline-flex;
   align-items:center;
+  display: inline-flex;
+  justify-content: space-between;
   padding:0;
 }
 
 .warn-pop {
-visibility:hidden;
- background-color: ghostwhite;
- color:red;
+  background-color: #d69a49;
+  padding-top: 2px;
+  visibility:hidden;
 }
 
 * {
@@ -133,34 +142,24 @@ visibility:hidden;
 
 .invalid {
   outline: none;
-  border:  2px solid red;
+  border:  2px solid #d69a49;
 }
-
 
 .valid {
   outline: none;
   border: 2px solid black;
 }
 
-
 .warn-pop-date {
-    left: 14%;
-    top: 21px;
-    background-color: ghostwhite;
-    color:red;
+  left: 14%;
+  top: 21px;
+  background-color: ghostwhite;
+  color:#d69a49;
 }
 
 .input-div-cont {
-    display: flex;
+  display: flex;
 }
-
-
-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
 
 .name-container {
   display: inline-flex;
@@ -171,14 +170,10 @@ p {
   margin: 0  0 0 15px;
 }
 
-.special-border {
-  border: solid 3px #e8dcb8;
-  display: flex;
-}
-
 .submit-btn-container {
   display: flex;
   justify-content: center;
+  margin-right: 70px;
 }
 
 .submit-btn {
@@ -247,8 +242,9 @@ p {
 @media (max-width: 640px) {
   h1 {
     font-size: 50px;
+  }
+  .myForm {
     margin-left: 0;
-    text-align: center;
   }
   .pop-up {
     top: 15%;
